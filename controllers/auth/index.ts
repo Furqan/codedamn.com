@@ -1,8 +1,10 @@
 import login from './login'
 import register from './register'
-import middleware from './middleware'
+import logout from './logout'
+import redirectAuthenticated from '../../middlewares/AuthenticatedUsers/redirectAuthenticated'
 
 export default router => {
-    router.use('/', middleware, login)
-    router.use('/', middleware, register)    
+    router.use('/', login)
+    router.use('/', register)    
+    router.use('/', logout)
 }
